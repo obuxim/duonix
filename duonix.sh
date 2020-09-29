@@ -19,7 +19,7 @@ sudo apt-get purge apache2 &&
 echo 'Installing Nginx' &&
 sudo apt-get install nginx &&
 echo 'Starting Nginx' &&
-sudo systemctl enable nginx
+sudo systemctl start nginx
 echo 'Swapping Default Nginx Configuration' &&
 sudo rm /etc/nginx/sites-available/default &&
 sudo cp ./default /etc/nginx/sites-available/default &&
@@ -27,8 +27,8 @@ echo 'Installing MariaDB' &&
 sudo apt-get install -y mariadb-server mariadb-client &&
 echo 'Starting MariaDB Server' &&
 sudo systemctl start mariadb &&
-echo 'Adding Apache2 & MariaDB to startup' &&
-sudo systemctl enable apache2 &&
+echo 'Adding Nginx & MariaDB to startup' &&
+sudo systemctl enable nginx &&
 sudo systemctl enable mariadb &&
 echo 'Configuring MySQL' &&
 sudo mysql_secure_installation &&
