@@ -34,6 +34,7 @@ echo 'Configuring MySQL' &&
 sudo mysql_secure_installation &&
 echo 'Installing phpMyAdmin' &&
 sudo apt-get install -y phpmyadmin &&
+sudo ln -s /usr/share/phpmyadmin /var/www/html &&
 echo 'Please configure a new User for phpMyAdmin and Login.' &&
 echo '-----------------------------------------------------------' &&
 echo 'Server is ready!' &&
